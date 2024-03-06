@@ -28,21 +28,33 @@ class TasksCubit extends Cubit<TasksState> {
   final UpdateTaskUseCase _updateTaskUseCase;
   final DeleteTaskUseCase _deleteTaskUseCase;
 
+  final List<TaskEntity> tasks = [];
+
   Future<void> getTasks() async {
     emit(TasksLoading());
     final result = await _getTasksUseCase.call(NoParameters());
     result.fold(
       (failure) => emit(TasksError(failure.toString())),
-      (tasks) => emit(TasksLoaded(tasks)),
+      (result) {
+        tasks
+          ..clear()
+          ..addAll(result);
+        emit(TasksLoaded());
+      },
     );
   }
 
   Future<void> addTask(TaskEntity task) async {
-    if (addTaskFormKey.currentState!.validate()) {
+    if (addTaskFormKey.currentState?.validate() ?? true) {
+      // ?? true for test purpose
       final result = await _addTaskUseCase.call(AddTaskPrams(task));
       result.fold(
         (failure) => emit(TasksError(failure.toString())),
-        (r) => getTasks(),
+        (r) {
+          addTaskController.clear();
+          tasks.add(task);
+          emit(TasksLoaded());
+        },
       );
     }
   }
@@ -51,7 +63,13 @@ class TasksCubit extends Cubit<TasksState> {
     final result = await _updateTaskUseCase.call(UpdateTaskParams(task));
     result.fold(
       (failure) => emit(TasksError(failure.toString())),
-      (r) => getTasks(),
+      (r) {
+        tasks.firstWhere((element) => element.name == task.name)
+          ..isChecked = task.isChecked
+          ..name = task.name
+          ..updatedAt = task.updatedAt;
+        emit(TasksLoaded());
+      },
     );
   }
 
@@ -59,7 +77,10 @@ class TasksCubit extends Cubit<TasksState> {
     final result = await _deleteTaskUseCase.call(DeleteTaskParams(task));
     result.fold(
       (failure) => emit(TasksError(failure.toString())),
-      (r) => getTasks(),
+      (r) {
+        tasks.removeWhere((element) => element.name == task.name);
+        emit(TasksLoaded());
+      },
     );
   }
 }

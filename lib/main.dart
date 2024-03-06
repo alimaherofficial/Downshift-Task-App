@@ -20,7 +20,6 @@ Future<void> main() async {
     DatabaseManager.initHive(),
   ]);
 
-  // await DatabaseManager.clearData();
 
   // Set the global Bloc observer for better debugging and logging.
   Bloc.observer = AppBlocObserver();

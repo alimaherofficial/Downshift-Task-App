@@ -4,5 +4,12 @@
   "addNewTask": "Add New Task",
   "enterTaskName": "Enter task name",
   "taskName": "Task Name",
-  "pleaseEnterTaskName": "Please enter task name"
+  "pleaseEnterTaskName": "Please enter task name",
+  "done": "Done",
+  "edit": "Edit",
+  "editTask": "Edit Task",
+  "helloManuel": "Hello, Manuel",
+  "whatAreYourPlansNforToday": "What are your plans \\nfor today?",
+  "goProNoAds": "Go Pro (No Ads)",
+  "noFussNoAdsForOnly1ANmonth": "No fuss, no ads, for only \\$1 a \\nmonth"
 }

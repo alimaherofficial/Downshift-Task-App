@@ -9,6 +9,7 @@ import 'package:coding_challenge/features/tasks/domain/entities/task_entity.dart
 import 'package:coding_challenge/features/tasks/domain/usecases/update_task_usecase.dart';
 import 'package:coding_challenge/features/tasks/presentation/controllers/edit_task/edit_task_cubit.dart';
 import 'package:coding_challenge/features/tasks/presentation/controllers/main_tasks/tasks_cubit.dart';
+import 'package:coding_challenge/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -36,7 +37,7 @@ class EditTaskScreen extends StatelessWidget {
           return Scaffold(
             appBar: customAppBar(
               context: context,
-              title: 'Edit Task',
+              title: S.of(context).editTask,
               haveBackButton: true,
             ),
             body: SafeArea(
@@ -50,12 +51,12 @@ class EditTaskScreen extends StatelessWidget {
                       CustomTextField(
                         controller:
                             context.read<EditTaskCubit>().editTaskController,
-                        label: 'Task Name',
+                        label: S.of(context).taskName,
                         fillColor: Theme.of(context).scaffoldBackgroundColor,
                         useBorder: true,
                         validator: (p0) {
                           if (p0 == null || p0.isEmpty) {
-                            return 'Please enter task name';
+                            return S.of(context).pleaseEnterTaskName;
                           }
                           return null;
                         },
@@ -67,7 +68,7 @@ class EditTaskScreen extends StatelessWidget {
                                 task,
                               );
                         },
-                        buttonText: 'Done',
+                        buttonText: S.of(context).done,
                         isFilled: true,
                       ),
                     ],

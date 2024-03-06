@@ -3,6 +3,7 @@
 import 'package:coding_challenge/core/utils/assets.dart';
 import 'package:coding_challenge/core/utils/sized_x.dart';
 import 'package:coding_challenge/core/widgets/custom_padding.dart';
+import 'package:coding_challenge/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -47,7 +48,7 @@ class CustomBlueContainer extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Hello, Manuel',
+                      S.of(context).helloManuel,
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
                             color: Theme.of(context).scaffoldBackgroundColor,
                             fontWeight: FontWeight.w500,
@@ -55,7 +56,7 @@ class CustomBlueContainer extends StatelessWidget {
                     ),
                     SizedX.h0p5,
                     Text(
-                      'What are your plans \nfor today?',
+                      S.of(context).whatAreYourPlansNforToday,
                       style: Theme.of(context)
                           .textTheme
                           .displayMedium!

@@ -5,6 +5,7 @@ import 'package:coding_challenge/core/utils/sized_x.dart';
 import 'package:coding_challenge/core/widgets/custom_checkbox.dart';
 import 'package:coding_challenge/features/tasks/domain/entities/task_entity.dart';
 import 'package:coding_challenge/features/tasks/presentation/controllers/main_tasks/tasks_cubit.dart';
+import 'package:coding_challenge/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
@@ -84,10 +85,10 @@ class CustomCard extends StatelessWidget {
                           borderRadius: BorderRadius.circular(4),
                         ),
                       ),
-                      child: const Center(
+                      child: Center(
                         child: Text(
-                          'Edit',
-                          style: TextStyle(
+                          S.of(context).edit,
+                          style: const TextStyle(
                             color: Color(0xFF071C55),
                             fontSize: 16,
                             fontWeight: FontWeight.w500,

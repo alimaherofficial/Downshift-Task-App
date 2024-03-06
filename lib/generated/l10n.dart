@@ -109,6 +109,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Done`
+  String get done {
+    return Intl.message(
+      'Done',
+      name: 'done',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get edit {
+    return Intl.message(
+      'Edit',
+      name: 'edit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Task`
+  String get editTask {
+    return Intl.message(
+      'Edit Task',
+      name: 'editTask',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hello, Manuel`
+  String get helloManuel {
+    return Intl.message(
+      'Hello, Manuel',
+      name: 'helloManuel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `What are your plans \nfor today?`
+  String get whatAreYourPlansNforToday {
+    return Intl.message(
+      'What are your plans \\nfor today?',
+      name: 'whatAreYourPlansNforToday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go Pro (No Ads)`
+  String get goProNoAds {
+    return Intl.message(
+      'Go Pro (No Ads)',
+      name: 'goProNoAds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No fuss, no ads, for only \$1 a \nmonth`
+  String get noFussNoAdsForOnly1ANmonth {
+    return Intl.message(
+      'No fuss, no ads, for only \\\$1 a \\nmonth',
+      name: 'noFussNoAdsForOnly1ANmonth',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -117,7 +187,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
-      Locale.fromSubtags(languageCode: 'ar'),
+      Locale.fromSubtags(languageCode: 'fr'),
     ];
   }
 

@@ -68,7 +68,6 @@ class AppRoutes {
           child: Text(AppStrings.noRouteFound),
         ),
       ),
-      settings: const RouteSettings(name: 'undefinedRoute'),
     );
   }
 }

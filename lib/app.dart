@@ -1,18 +1,9 @@
 import 'package:coding_challenge/config/routes/app_pages.dart';
 import 'package:coding_challenge/config/themes/app_theme.dart';
 import 'package:coding_challenge/config/themes/app_theme_dark.dart';
-import 'package:coding_challenge/core/injection_container.dart';
 import 'package:coding_challenge/core/utils/app_strings.dart';
-import 'package:coding_challenge/features/splash/domain/usecases/change_lang.dart';
-import 'package:coding_challenge/features/splash/domain/usecases/change_theme_mode.dart';
-import 'package:coding_challenge/features/splash/domain/usecases/get_saved_lang.dart';
-import 'package:coding_challenge/features/splash/domain/usecases/get_saved_theme_mode.dart';
+import 'package:coding_challenge/core/utils/multi_bloc_manager.dart';
 import 'package:coding_challenge/features/splash/presentation/controllers/main_cubit/main_cubit.dart';
-import 'package:coding_challenge/features/tasks/domain/usecases/add_task_usecase.dart';
-import 'package:coding_challenge/features/tasks/domain/usecases/delete_task_usecase.dart';
-import 'package:coding_challenge/features/tasks/domain/usecases/get_tasks_usecase.dart';
-import 'package:coding_challenge/features/tasks/domain/usecases/update_task_usecase.dart';
-import 'package:coding_challenge/features/tasks/presentation/controllers/main_tasks/tasks_cubit.dart';
 import 'package:coding_challenge/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -33,26 +24,7 @@ class CodingChallengeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => MainCubit(
-            getIt<GetSavedLangUseCase>(),
-            getIt<ChangeLangUseCase>(),
-            getIt<GetSavedThemeModeUseCase>(),
-            getIt<ChangeThemeModeUseCase>(),
-          )
-            ..getSavedLang()
-            ..getSavedThemeMode(),
-        ),
-        BlocProvider(
-          create: (context) => TasksCubit(
-            getIt<GetTasksUseCase>(),
-            getIt<AddTaskUseCase>(),
-            getIt<UpdateTaskUseCase>(),
-            getIt<DeleteTaskUseCase>(),
-          )..getTasks(),
-        ),
-      ],
+      providers: MultiBlocManager.multiBlocProviderList,
       child: Sizer(
         builder: (context, orientation, deviceType) =>
             BlocBuilder<MainCubit, MainState>(

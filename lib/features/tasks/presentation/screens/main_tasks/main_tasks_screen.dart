@@ -38,17 +38,19 @@ class MainTasksScreen extends StatelessWidget {
           SizedX.h3,
           BlocBuilder<TasksCubit, TasksState>(
             builder: (context, state) {
+              final cubit = context.read<TasksCubit>();
               if (state is TasksLoading) {
                 return const CircularProgressIndicator();
-              } else if (state is TasksLoaded && state.tasks.isNotEmpty) {
+              } else if (state is TasksLoaded && cubit.tasks.isNotEmpty) {
+                final tasks = cubit.tasks;
                 return Expanded(
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 3.w),
                     child: ListView.separated(
-                      itemCount: state.tasks.length,
+                      itemCount: tasks.length,
                       separatorBuilder: (context, index) => SizedX.h3,
                       itemBuilder: (context, index) {
-                        final task = state.tasks[index];
+                        final task = tasks[index];
                         return CustomCard(
                           task: task,
                         );
@@ -56,7 +58,7 @@ class MainTasksScreen extends StatelessWidget {
                     ),
                   ),
                 );
-              } else if (state is TasksLoaded && state.tasks.isEmpty) {
+              } else if (state is TasksLoaded && cubit.tasks.isEmpty) {
                 return Column(
                   children: [
                     SizedX.h20,

@@ -2,6 +2,7 @@
 
 import 'package:coding_challenge/core/utils/assets.dart';
 import 'package:coding_challenge/core/utils/sized_x.dart';
+import 'package:coding_challenge/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
@@ -37,18 +38,18 @@ class CustomLimeContainer extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      'Go Pro (No Ads)',
-                      style: TextStyle(
+                    Text(
+                      S.of(context).goProNoAds,
+                      style: const TextStyle(
                         color: Color(0xFF071C55),
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
                     SizedX.h0p5,
-                    const Text(
-                      'No fuss, no ads, for only \$1 a \nmonth',
-                      style: TextStyle(
+                    Text(
+                      S.of(context).noFussNoAdsForOnly1ANmonth,
+                      style: const TextStyle(
                         color: Color(0xFF0C2971),
                         fontSize: 12,
                         fontWeight: FontWeight.w400,

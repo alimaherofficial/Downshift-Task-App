@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a en locale. All the
+// This is a library that provides messages for a fr locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -18,26 +18,29 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'en';
+  String get localeName => 'fr';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "add": MessageLookupByLibrary.simpleMessage("Add"),
-        "addNewTask": MessageLookupByLibrary.simpleMessage("Add New Task"),
-        "done": MessageLookupByLibrary.simpleMessage("Done"),
-        "edit": MessageLookupByLibrary.simpleMessage("Edit"),
-        "editTask": MessageLookupByLibrary.simpleMessage("Edit Task"),
+        "add": MessageLookupByLibrary.simpleMessage("Ajouter"),
+        "addNewTask":
+            MessageLookupByLibrary.simpleMessage("Ajouter une nouvelle tâche"),
+        "done": MessageLookupByLibrary.simpleMessage("Terminé"),
+        "edit": MessageLookupByLibrary.simpleMessage("Éditer"),
+        "editTask": MessageLookupByLibrary.simpleMessage("Éditer la tâche"),
         "enterTaskName":
-            MessageLookupByLibrary.simpleMessage("Enter task name"),
-        "goProNoAds": MessageLookupByLibrary.simpleMessage("Go Pro (No Ads)"),
-        "helloManuel": MessageLookupByLibrary.simpleMessage("Hello, Manuel"),
+            MessageLookupByLibrary.simpleMessage("Entrez le nom de la tâche"),
+        "goProNoAds":
+            MessageLookupByLibrary.simpleMessage("Passez Pro (Sans pubs)"),
+        "helloManuel": MessageLookupByLibrary.simpleMessage("Bonjour, Manuel"),
         "noFussNoAdsForOnly1ANmonth": MessageLookupByLibrary.simpleMessage(
-            "No fuss, no ads, for only \\\$1 a \\nmonth"),
-        "noTasksYet": MessageLookupByLibrary.simpleMessage("No tasks yet"),
-        "pleaseEnterTaskName":
-            MessageLookupByLibrary.simpleMessage("Please enter task name"),
-        "taskName": MessageLookupByLibrary.simpleMessage("Task Name"),
+            "Sans tracas, sans pubs, pour seulement \\\$1 par \\nmois"),
+        "noTasksYet": MessageLookupByLibrary.simpleMessage(
+            "Pas de tâches pour le moment"),
+        "pleaseEnterTaskName": MessageLookupByLibrary.simpleMessage(
+            "Veuillez entrer le nom de la tâche"),
+        "taskName": MessageLookupByLibrary.simpleMessage("Nom de la tâche"),
         "whatAreYourPlansNforToday": MessageLookupByLibrary.simpleMessage(
-            "What are your plans \\nfor today?")
+            "Quels sont vos plans \\npour aujourd\'hui ?")
       };
 }

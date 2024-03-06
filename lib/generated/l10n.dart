@@ -150,10 +150,10 @@ class S {
     );
   }
 
-  /// `What are your plans \nfor today?`
+  /// `What are your plans \n for today?`
   String get whatAreYourPlansNforToday {
     return Intl.message(
-      'What are your plans \\nfor today?',
+      'What are your plans \n for today?',
       name: 'whatAreYourPlansNforToday',
       desc: '',
       args: [],
@@ -170,10 +170,10 @@ class S {
     );
   }
 
-  /// `No fuss, no ads, for only \$1 a \nmonth`
+  /// `No fuss, no ads, for only $1 a \n month`
   String get noFussNoAdsForOnly1ANmonth {
     return Intl.message(
-      'No fuss, no ads, for only \\\$1 a \\nmonth',
+      'No fuss, no ads, for only \$1 a \n month',
       name: 'noFussNoAdsForOnly1ANmonth',
       desc: '',
       args: [],

@@ -34,13 +34,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Passez Pro (Sans pubs)"),
         "helloManuel": MessageLookupByLibrary.simpleMessage("Bonjour, Manuel"),
         "noFussNoAdsForOnly1ANmonth": MessageLookupByLibrary.simpleMessage(
-            "Sans tracas, sans pubs, pour seulement \\\$1 par \\nmois"),
+            "Sans tracas, sans pubs, pour \n seulement \$1 par mois"),
         "noTasksYet": MessageLookupByLibrary.simpleMessage(
             "Pas de tâches pour le moment"),
         "pleaseEnterTaskName": MessageLookupByLibrary.simpleMessage(
             "Veuillez entrer le nom de la tâche"),
         "taskName": MessageLookupByLibrary.simpleMessage("Nom de la tâche"),
         "whatAreYourPlansNforToday": MessageLookupByLibrary.simpleMessage(
-            "Quels sont vos plans \\npour aujourd\'hui ?")
+            "Quels sont vos plans \n pour aujourd\'hui ?")
       };
 }

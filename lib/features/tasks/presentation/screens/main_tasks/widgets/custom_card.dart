@@ -22,25 +22,38 @@ class CustomCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<TasksCubit, TasksState>(
       builder: (context, state) {
-        return Container(
-          width: double.infinity,
-          height: 10.h,
-          decoration: ShapeDecoration(
-            color: Colors.white,
-            shape: RoundedRectangleBorder(
-              side: const BorderSide(color: Color(0xFFE6E6E6)),
-              borderRadius: BorderRadius.circular(6),
+        return Dismissible(
+          key: UniqueKey(),
+          onDismissed: (direction) {
+            context.read<TasksCubit>().deleteTask(task);
+          },
+          background: Container(
+            color: Colors.red,
+            alignment: Alignment.centerRight,
+            padding: const EdgeInsets.only(right: 20),
+            child: const Text(
+              'Delete',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 4.w,
+          child: Container(
+            width: double.infinity,
+            height: 10.h,
+            decoration: ShapeDecoration(
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                side: const BorderSide(color: Color(0xFFE6E6E6)),
+                borderRadius: BorderRadius.circular(6),
+              ),
             ),
-            child: Dismissible(
-              key: UniqueKey(),
-              onDismissed: (direction) {
-                context.read<TasksCubit>().deleteTask(task);
-              },
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 4.w,
+              ),
               child: Row(
                 children: [
                   CustomCheckbox(

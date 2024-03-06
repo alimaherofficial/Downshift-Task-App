@@ -32,12 +32,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "goProNoAds": MessageLookupByLibrary.simpleMessage("Go Pro (No Ads)"),
         "helloManuel": MessageLookupByLibrary.simpleMessage("Hello, Manuel"),
         "noFussNoAdsForOnly1ANmonth": MessageLookupByLibrary.simpleMessage(
-            "No fuss, no ads, for only \\\$1 a \\nmonth"),
+            "No fuss, no ads, for only \$1 a \n month"),
         "noTasksYet": MessageLookupByLibrary.simpleMessage("No tasks yet"),
         "pleaseEnterTaskName":
             MessageLookupByLibrary.simpleMessage("Please enter task name"),
         "taskName": MessageLookupByLibrary.simpleMessage("Task Name"),
         "whatAreYourPlansNforToday": MessageLookupByLibrary.simpleMessage(
-            "What are your plans \\nfor today?")
+            "What are your plans \n for today?")
       };
 }

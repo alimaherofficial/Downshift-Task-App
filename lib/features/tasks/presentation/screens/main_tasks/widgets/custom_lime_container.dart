@@ -4,6 +4,7 @@ import 'package:coding_challenge/core/utils/assets.dart';
 import 'package:coding_challenge/core/utils/sized_x.dart';
 import 'package:coding_challenge/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
@@ -40,6 +41,7 @@ class CustomLimeContainer extends StatelessWidget {
                   children: [
                     Text(
                       S.of(context).goProNoAds,
+                      overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
                         color: Color(0xFF071C55),
                         fontSize: 18,
@@ -49,6 +51,7 @@ class CustomLimeContainer extends StatelessWidget {
                     SizedX.h0p5,
                     Text(
                       S.of(context).noFussNoAdsForOnly1ANmonth,
+                      overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
                         color: Color(0xFF0C2971),
                         fontSize: 12,

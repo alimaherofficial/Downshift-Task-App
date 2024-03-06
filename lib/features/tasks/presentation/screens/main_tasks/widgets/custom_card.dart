@@ -80,35 +80,51 @@ class CustomCard extends StatelessWidget {
                           ),
                   ),
                   const Spacer(),
-                  InkWell(
-                    onTap: () {
-                      Navigator.pushNamed(
-                        context,
-                        Routes.editTaskRoute,
-                        arguments: task,
-                      );
-                    },
-                    child: Container(
-                      width: 51,
-                      height: 45,
-                      decoration: ShapeDecoration(
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          side: const BorderSide(color: Color(0xFF071C55)),
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                      ),
-                      child: Center(
-                        child: Text(
-                          S.of(context).edit,
-                          style: const TextStyle(
-                            color: Color(0xFF071C55),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            Routes.editTaskRoute,
+                            arguments: task,
+                          );
+                        },
+                        child: Container(
+                          width: 51,
+                          height: 45,
+                          decoration: ShapeDecoration(
+                            color: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              side: const BorderSide(color: Color(0xFF071C55)),
+                              borderRadius: BorderRadius.circular(4),
+                            ),
+                          ),
+                          child: Center(
+                            child: Text(
+                              S.of(context).edit,
+                              style: const TextStyle(
+                                color: Color(0xFF071C55),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
                           ),
                         ),
                       ),
-                    ),
+                      // delete icon button without text
+                      SizedX.h0p5,
+                      InkWell(
+                        onTap: () {
+                          context.read<TasksCubit>().deleteTask(task);
+                        },
+                        child: const Icon(
+                          Icons.delete,
+                          color: Colors.red,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),

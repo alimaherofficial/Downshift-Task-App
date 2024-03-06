@@ -28,7 +28,7 @@ class EditTaskScreen extends StatelessWidget {
       child: BlocConsumer<EditTaskCubit, EditTaskState>(
         listener: (context, state) async {
           if (state is EditTaskLoaded) {
-            await context.read<TasksCubit>().updateTask(task);
+            await context.read<TasksCubit>().getTasks();
             // ignore: use_build_context_synchronously
             Navigator.pop(context);
           }

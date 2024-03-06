@@ -64,7 +64,7 @@ class TasksCubit extends Cubit<TasksState> {
     result.fold(
       (failure) => emit(TasksError(failure.toString())),
       (r) {
-        tasks.firstWhere((element) => element.name == task.name)
+        tasks.firstWhere((element) => element.id == task.id)
           ..isChecked = task.isChecked
           ..name = task.name
           ..updatedAt = task.updatedAt;
@@ -78,7 +78,7 @@ class TasksCubit extends Cubit<TasksState> {
     result.fold(
       (failure) => emit(TasksError(failure.toString())),
       (r) {
-        tasks.removeWhere((element) => element.name == task.name);
+        tasks.removeWhere((element) => element.id == task.id);
         emit(TasksLoaded());
       },
     );

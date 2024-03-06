@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs
 
+import 'package:coding_challenge/core/injection_container.dart';
 import 'package:coding_challenge/core/utils/sized_x.dart';
 import 'package:coding_challenge/core/widgets/custom_app_bar.dart';
 import 'package:coding_challenge/core/widgets/custom_button.dart';
@@ -22,7 +23,7 @@ class EditTaskScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => EditTaskCubit(
-        context.read<UpdateTaskUseCase>(),
+        getIt<UpdateTaskUseCase>(),
       ),
       child: BlocConsumer<EditTaskCubit, EditTaskState>(
         listener: (context, state) async {
